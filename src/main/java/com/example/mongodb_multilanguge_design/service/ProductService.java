@@ -23,6 +23,6 @@ public class ProductService {
        ProductDao productDao =  productRepository.findById(productId).get();
         TranslationDetailsDao translationDetailsDao = translationDetailsRepository.findById(translationDetailsId).get();
         productDao.setTranslationDetails(translationDetailsDao);
-        return productDao;
+        return productRepository.save(productDao);
     }
 }
