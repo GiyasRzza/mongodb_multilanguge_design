@@ -5,6 +5,8 @@ import com.example.mongodb_multilanguge_design.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @AllArgsConstructor
@@ -19,5 +21,10 @@ public class ProductController {
     @PutMapping
     public ProductDao updateProduct(@RequestHeader String productId, @RequestHeader String translateDetailsId ){
         return productService.updateProduct(productId,translateDetailsId);
+    }
+    @GetMapping
+
+    public List<ProductDao> allProduct(){
+        return productService.allProducts();
     }
 }
